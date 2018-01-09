@@ -1,9 +1,13 @@
 <!doctype html>
 <html>
 <body>
-  <p>Throw JS exception 'junk'</p>
+  <p>Throw JS exception 'junk' unless ?nothrow in URL</p>
 <script>
-throw 'junk';
+  var url = new URL(window.location.href);
+  var nothrow = (null !== url.searchParams.get("nothrow"));
+  if (!nothrow || nothrow == ''){
+    throw 'junk';
+  }
 </script>
 </body>
 </html>
