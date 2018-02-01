@@ -3,8 +3,6 @@
 {
   const str = "this is my string";
 
-  // recursively
-
   function reverse(str) {
     if (str.length === 0) return "";
     return str[str.length - 1] + reverse(str.substr(0, str.length - 1));
